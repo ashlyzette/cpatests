@@ -1,0 +1,52 @@
+/* Color pallete
+ background: #F1828D;
+ background: #A7226E;
+ background: #EC2049;
+ background: #F26B38;
+ background: #F7DB4F;
+ background: #2F9599; */
+
+a{
+    text-decoration: none;
+}
+
+.exam_background{
+    background: rgb(238, 238, 238);
+}
+
+.exam{
+    background:white;
+}
+
+.menu_bar{
+    /* background: #F1828D; */
+    background: #A7226E;
+    /* background: #EC2049;
+    background: #F26B38;
+    background: #F7DB4F;
+    background: #2F9599; */
+}
+.nav-link{
+    color:white;
+}
+
+.left_menu{
+    border-right:10px;
+    /* background: #F1828D */
+}
+.middle_container{
+    border:1px solid rgb(245, 245, 245);
+    height:300px;
+    overflow: scroll;
+}
+.card-body{
+    padding:0;
+}
+
+.list-group-item{
+    padding-left:40px;
+}
+
+.form-control{
+    border:0;
+}
