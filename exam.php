@@ -3,16 +3,26 @@
     require 'includes/classes/Examination.php';
     $question = "";
 
-    if (isset($_GET['id'])){
+    if (isset($_GET['id']) && $_GET['exam_id']){
         $id =$_GET['id'];
         $exam_id = $_GET['exam_id'];
         $question_obj = new Testing($con);
         $question = $question_obj->GetQuestion($id,$exam_id);
     }
 
+    if (isset($_POST['submit'])){
+        $result = $question_obj->GetScore($exam_id);
+        header("Location: result.php?$result");
+    }
+
+    if(isset($_POST['review'])){
+        header("Location: exam.php?id=1&exam_id=$exam_id");
+    }
+
     if(isset($_POST['btn_next'])){
         $qid = $_POST['qid'];
         $num = $_POST['num'];
+        $total = $_POST['total'];
         $exam_id = $_POST['exam_id'];
         $answer = $_POST['answer'];
         $answer = $question_obj->SubmitAnswer($num,$exam_id,$answer,$qid);
@@ -40,11 +50,12 @@
 <body class = "exam_background">
     <!-- Load menu -->
     <?php include_once ("includes/standard/menu.php") ?>
-    <div class="container exam mt-5 p-4">
+    <div class="container exam mt-5 pt-4 pb-1">
         <?php 
             echo $question; 
         ?>
     </div>
+    <script src = 'assets/js/chart-min.js'></script>
     <script src = 'assets/js/jquery-3.5.1.min.js'> </script> 
     <script src = 'assets/js/bootstrap.min.js'> </script> 
     <script src = 'assets/js/exam.js'> </script> 
