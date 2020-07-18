@@ -7,7 +7,6 @@
     $exam_id = mysqli_num_rows($get_exam_id);
     $exam_id ++;
     $num = 0;
-
     //Get questions
     $exam_obj = mysqli_query($con, "SELECT * FROM exam_bank ORDER by rand()");
     while($row = mysqli_fetch_array($exam_obj)){

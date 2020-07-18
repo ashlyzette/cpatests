@@ -9,7 +9,6 @@ function GoToNext(){
         type: 'POST',
         data: '',
         cache: false,
-
         success: function(data){
             $('#instruction').hide();
             $('#exam_container').show()
