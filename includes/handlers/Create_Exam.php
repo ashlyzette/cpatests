@@ -13,7 +13,7 @@
         $id = $row['id'];
         $category = $row['category'];
         $date_now = Date('Y-m-d H:i:s');
-        $add_exam = mysqli_query($con, "INSERT INTO exam VALUES (NULL,'$exam_id','1','$num','$id','$category','$date_now','$date_now',' ',' ')");
+        $add_exam = mysqli_query($con, "INSERT INTO exam VALUES (NULL,'$exam_id','1','$num','$id','$category','$date_now','$date_now',' ',' ','0')");
     }
     echo "exam.php?id=1&exam_id=$exam_id";
 ?>
