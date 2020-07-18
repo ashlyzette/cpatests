@@ -12,7 +12,7 @@ function GoToNext(){
         success: function(data){
             $('#instruction').hide();
             $('#exam_container').show();
-            data = encodeURIComponent(data);
+            data = encodeURI(data);
             window.location.href = data;
         }
     });
