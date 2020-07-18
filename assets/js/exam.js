@@ -14,7 +14,6 @@ function GoToNext(){
             $('#instruction').hide();
             $('#exam_container').show()
             window.location.href = data;
-            console.log(data);
         }
     });
 }
