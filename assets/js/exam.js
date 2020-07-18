@@ -12,8 +12,8 @@ function GoToNext(){
         success: function(data){
             $('#instruction').hide();
             $('#exam_container').show();
-            data = encodeURI(data);
-            window.location.href = data;
+            console.log(data);
+            // window.location.href = data;
         }
     });
 }
