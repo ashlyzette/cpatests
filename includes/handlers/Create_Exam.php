@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     include_once ('../../config/config.php');
     //Get exam id
     $get_exam_id = mysqli_query($con, "SELECT DISTINCT user_id, exam_id FROM exam");

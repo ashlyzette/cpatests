@@ -11,7 +11,10 @@ function GoToNext(){
         cache: false,
 
         success: function(data){
+            $('#instruction').hide();
+            $('#exam_container').show()
             window.location.href = data;
+            console.log(data);
         }
     });
 }
