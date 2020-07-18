@@ -11,7 +11,8 @@ function GoToNext(){
         cache: false,
         success: function(data){
             $('#instruction').hide();
-            $('#exam_container').show()
+            $('#exam_container').show();
+            data = encodeURIComponent(data);
             window.location.href = data;
         }
     });
