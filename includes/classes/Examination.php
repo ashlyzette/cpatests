@@ -7,14 +7,23 @@
         }
 
         public function SubmitAnswer($num, $exam_id, $answer,$question){
+            //Get the correct answer choice from exam database
+            $get_answer_obj = mysqli_query($this->con, "SELECT a,b,c,d FROM exam WHERE question_id = '$question'");
+            $get_answer = mysqli_fetch_array($get_answer_obj);
+
+            if ($answer == 'a') $user_answer = $get_answer['a'];
+            if ($answer == 'b') $user_answer = $get_answer['b'];
+            if ($answer == 'c') $user_answer = $get_answer['c'];
+            if ($answer == 'd') $user_answer = $get_answer['d'];
+
             //Check if answer is correct
-            $look_up = mysqli_query($this->con, "SELECT * FROM exam_bank WHERE id='$question' AND ans='$answer'");
+            $look_up = mysqli_query($this->con, "SELECT * FROM exam_bank WHERE id='$question' AND ans='$user_answer'");
             mysqli_num_rows($look_up) > 0 ? $isCorrect = 'yes' : $isCorrect = 'no';
             $answer_obj = mysqli_query($this->con, "UPDATE exam SET answer = '$answer', is_correct = '$isCorrect' WHERE num ='$num' AND exam_id='$exam_id'");
         }
 
         public function GetQuestion($num,$exam_id){
-            $question_obj = mysqli_query($this->con, "SELECT question_id, answer, done FROM exam WHERE exam_id= '$exam_id' AND num = '$num'");
+            $question_obj = mysqli_query($this->con, "SELECT question_id,a,b,c,d, answer, done FROM exam WHERE exam_id= '$exam_id' AND num = '$num'");
             $total_obj = mysqli_query($this->con, "SELECT id FROM exam WHERE exam_id= '$exam_id'");
             $total_questions = mysqli_num_rows($total_obj);
 
@@ -22,17 +31,23 @@
                 $question_id = $question_row['question_id'];
                 $answer = $question_row['answer'];
                 $status = $question_row['done'];
-                $question_obj = mysqli_query($this->con, "SELECT * FROM exam_bank WHERE id = '$num'");
+                $choice_a = $question_row['a'];
+                $choice_b = $question_row['b'];
+                $choice_c = $question_row['c'];
+                $choice_d = $question_row['d'];
+                $question_obj = mysqli_query($this->con, "SELECT * FROM exam_bank WHERE id = '$question_id '");
                 if($row = mysqli_fetch_array($question_obj)){
                     $_SESSION['exam'] = $exam_id;
                     $_SESSION['num'] = $num;
                     $id = $row['id'];
                     $question = $row['question'];
-                    $a = $row['a'];
-                    $b = $row['b'];
-                    $c = $row['c'];
-                    $d = $row['d'];
+                    $a = $row[$choice_a];
+                    $b = $row[$choice_b];
+                    $c = $row[$choice_c];
+                    $d = $row[$choice_d];
                     $ans = $row['ans'];
+                    $row['image'] ? $image = "<img src = '" . $row['image'] . "' />" : $image='';
+
                     //Display previous button or not
                     if ($num > 1){
                         $buttons= "<button type='submit' class = 'btn btn-warning btn-sm' id = 'btn_previous' name = 'btn_previous'>Previous Question</button>
@@ -57,34 +72,38 @@
                         
                     return "<form method='POST'>
                                 <div class='form-group'>
-                                    <div class ='form-control examination'>
+                                    <div class ='examination'>
                                         <label class = 'form-check-label question' name ='question_num' value ='$id'> $num. $question</label>
+                                        <div class = 'text_image'> $image </div>
                                     </div>
-                                    <div class ='form-control examination'>
+                                </div>
+                                <div class='form-group'>
+                                    <div class ='examination'>
                                         $choice_a
                                         <label class = 'form-check-label ml-4' for='id'> $a </label>
                                     </div>
-                                    <div class ='form-control examination'>
+                                    <div class ='examination'>
                                         $choice_b
                                         <label class = 'form-check-label ml-4' for='id'> $b </label>
                                     </div>
-                                    <div class ='form-control examination'>
+                                    <div class ='examination'>
                                         $choice_c
                                         <label class = 'form-check-label ml-4' for='id'> $c </label>
                                     </div>
-                                    <div class ='form-control examination'>
+                                    <div class ='examination'>
                                         $choice_d
                                         <label class = 'form-check-label ml-4' for='id'> $d </label>
                                     </div>
-                                    <div class ='form-control examination'>
+                                    <div class ='examination mt-3'>
                                         $buttons
                                         <input type='hidden' name='qid' value ='$id'>
                                         <input type='hidden' name='num' value = '$num'>
                                         <input type='hidden' name ='exam_id' value ='$exam_id'>
                                         <input type='hidden' name ='total' value ='$total_questions'>
                                     </div>
-                                    <div class ='d-flex justify-content-end mt-2'>
-                                        $id of $total_questions
+                                </div>
+                                    <div class ='d-flex justify-content-end mt-4 mb-2'>
+                                        $num of $total_questions
                                     </div>
                                 </div>
                             </form>
@@ -92,12 +111,12 @@
                 } 
             } else {
                 return "<form method='POST'>
-                            <div class ='form-control'>
+                            <div class ='>
                                 <label >
                                     Exam done! Click submit to finish the exam or click review to review your answers
                                 </label>
                             </div>
-                            <div class ='form-control mb-4'>
+                            <div class ='mb-4'>
                                 <button type='submit' class = 'btn btn-primary btn-sm' id = 'btn_review' name = 'review'>Review</button>
                                 <button type='submit' class = 'btn btn-primary btn-sm' id = 'btn_next' name = 'submit'>Submit</button>
                             </div>

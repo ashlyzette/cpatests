@@ -45,6 +45,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href = 'assets/css/bootstrap.min.css'></link>
     <link rel='stylesheet' href = 'assets/css/main.css'></link>
+    <link rel='stylesheet' href = 'assets/css/exam.css'></link>
     <title>Exam</title>
 </head>
 <body class = "exam_background">

@@ -12,6 +12,9 @@
       <li class="nav-item">
         <a class="nav-link" href="instruction.php">Exam</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="add_questions.php">Add Questions</a>
+      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
