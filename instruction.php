@@ -21,7 +21,7 @@
             <p>Facere neque quia tempora, exercitationem est repellendus tenetur omnis doloremque quam a rerum porro, enim perferendis sapiente non sit cupiditate commodi minus amet?</p> 
             <p>Possimus itaque numquam nisi hic, sapiente nobis esse architecto omnis aliquam nemo tenetur.</p>
             <p>Ea possimus officiis aut facilis praesentium.</p>
-            <button class = 'btn btn-primary mt-5' id = 'continue_exam'> Continue to exam </button>
+            <button class = 'btn btn-primary btn-sm mt-5' id = 'continue_exam'> Continue to exam </button>
         </div>
     </div>
     <script src = 'assets/js/jquery-3.5.1.min.js'> </script> 

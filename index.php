@@ -1,7 +1,8 @@
 <?php
     require 'config/config.php';
+    require 'includes/handlers/Login.php';
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,6 +27,9 @@
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati, impedit quisquam. </p>
                         <p>Fugit, quibusdam iure! Enim odio veniam molestias maiores qui vitae numquam porro magni accusantium molestiae sint quod excepturi neque placeat quae doloribus id est aliquam, voluptates esse omnis soluta! 
                         <p>Quia quidem modi fugiat ex laudantium quo aut officia minus consequuntur molestiae eos temporibus explicabo facilis sequi, in quae nihil alias labore magnam quibusdam eius dolor. Repellendus repellat eaque, corrupti sequi fugiat debitis aut quos!</p>
+                        <div class = 'd-flex justify-content-end'>
+                            <a href= '#' class = "btn btn-primary btn-sm" name = 'read_more'> Login to read more</a>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="frequently_used_codes" role="tabpanel" aria-labelledby="list-profile-list">
                         <h5>Frequently Used Codes</h5>

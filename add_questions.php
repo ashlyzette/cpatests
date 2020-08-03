@@ -1,6 +1,5 @@
 <?php
     require 'config/config.php';
-
     if (isset($_POST['submit'])){
         $category = $_POST['category'];
         $question = $_POST['question'];
@@ -103,5 +102,7 @@
             </form>
         </div>
     </div>
+    <script src = 'assets/js/jquery-3.5.1.min.js'> </script> 
+    <script src = 'assets/js/bootstrap.min.js'> </script> 
 </body>
 </html>

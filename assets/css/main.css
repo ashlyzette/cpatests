@@ -46,3 +46,25 @@ a {
 .list-group-item {
 	padding-left: 40px;
 }
+
+.myHeader {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	padding-right: 5px !important;
+}
+
+.hideMenu {
+	display: none;
+}
+
+.showMenu {
+	display: block;
+}
+
+#userHeader {
+	color: white;
+}
+
+.userForm {
+	margin-bottom: 0;
+}
