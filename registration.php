@@ -51,7 +51,7 @@
         $mail->Body = "Thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>. 
             <p> Please click </p> <p> <a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . "'> Email Verification </a> </p> <p> to verify your email address. </p> 
             <p> Alternatively, you can copy and paste to your favorite web-browser the following link </p>
-            <p http://cpareview.amigoha.com/verification.php?token=  . $token </p>";
+            <p> 'http://cpareview.amigoha.com/verification.php?token='  . $token </p>";
         
         $mail->send();
         echo ("An activation code is sent to your email. Please check your email including your junk mail.");
