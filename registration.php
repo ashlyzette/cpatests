@@ -15,7 +15,6 @@
 		//Assign variables and clean up - check len characters - store session
 		$fname = $_POST['reg_fname'];
 		$fname = ucfirst(strtolower($fname));
-		echo $fname;
 		if (strlen($fname) > 25 || strlen($fname)<2) {
 			array_push($error_array,"First name must be between 2 to 25 characters<br/>");
 		}
