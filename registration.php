@@ -57,7 +57,7 @@
 							</tr>
 							<tr>
 								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px;'>
-									<p>Hi" . $fname . ", thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>
+									<p>Hi " . $fname . ", thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>
 									</p> 
 									<p> You now have access to the comprehensive test bank to help you with your studies. 
 										Our test banks are updated regularly by your beloved teachers. New questions are uploaded from time to time to help you prepare in your exams. </p>
@@ -71,13 +71,12 @@
 										text-align:center;
 										font-weight:bold;
 										font-size:14px;
-										font-family:'Open Sans',sans-serif;
 										color:#ffffff;
-										background:#FF6C37;
+										background-color:#FF6C37;
 										border-radius:5px;
 										line-height:17px;
 										margin:0 auto;'> 
-											Email Verification 
+											Confirm Email 
 										</a> 
 									</p> 
 								</td>
