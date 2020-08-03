@@ -48,7 +48,7 @@
         $mail->addAddress($email,$fname . ' ' . $lname);
         $mail->isHTML(true);
         $mail->Subject = "USC Student Chronicles Email Verification";
-		$mail->Body = "<table width='580' lass='deviceWidth' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#ffffff' style='border-collapse: collapse; margin: 0 auto;'> 
+		$mail->Body = "<table width='580' lass='deviceWidth' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#ffffff' style='border-collapse: collapse; margin: 0 auto; font-family: Open Sans, sans-serif;'> 
 						<tbody>
 							<tr>
 								<td valign='top' align='center' style='padding:0;' bgcolor='#ffffff'>
