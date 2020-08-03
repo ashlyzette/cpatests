@@ -48,10 +48,47 @@
         $mail->addAddress($email,$fname . ' ' . $lname);
         $mail->isHTML(true);
         $mail->Subject = "USC Student Chronicles Email Verification";
-        $mail->Body = "Thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>. 
-            <p> Please click </p> <p> <a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . "'> Email Verification </a> </p> <p> to verify your email address. </p> 
-            <p> Alternatively, you can copy and paste to your favorite web-browser the following link </p>
-            <p> <a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . "'> http://cpareview.amigoha.com/verification.php?token=  . $token </a></p>";
+		$mail->Body = "<table width='580' lass='deviceWidth' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#ffffff' style='border-collapse: collapse; margin: 0 auto;'> 
+						<tbody>
+							<tr>
+								<td valign='top' align='center' style='padding:0;' bgcolor='#ffffff'>
+									<h3> Welcome to <a href = 'https://amigoha.com/' >Amigoha</a></h3>
+								</td>
+							</tr>
+							<tr>
+								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px;'>
+									<p>Thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>
+									</p> 
+									<p> You now have access to the comprehensive test bank to help you with your studies. 
+										Our test banks are updated regularly by your beloved teachers. New questions are uploaded from time to time to help you prepare in your exams. </p>
+									<p>	To complete your account sign-up, please click on the button below to confirm your email: </p> 
+									<p> 
+										<a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . " 
+										style='padding:10px;width:300px;
+										display:block;
+										text-decoration:none;
+										border:1px solid #FF6C37;
+										text-align:center;
+										font-weight:bold;
+										font-size:14px;
+										font-family:'Open Sans',sans-serif;
+										color:#ffffff;
+										background:#FF6C37;
+										border-radius:5px;
+										line-height:17px;
+										margin:0 auto;'> 
+											Email Verification 
+										</a> 
+									</p> 
+								</td>
+							</tr>
+							<tr>
+								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px;'>
+									<p> Note: If you didn't sign up with <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>, there is no further action required from your end.</p></div>;
+								</td>
+							</tr>
+						</tbody>
+					</table>";
         
         $mail->send();
         echo ("An activation code is sent to your email. Please check your email including your junk mail.");
