@@ -48,7 +48,7 @@
         $mail->addAddress($email,$fname . ' ' . $lname);
         $mail->isHTML(true);
         $mail->Subject = "USC Student Chronicles Email Verification";
-		$mail->Body = "<table width='580' lass='deviceWidth' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#ffffff' style='border-collapse: collapse; margin: 0 auto; font-family: Open Sans, sans-serif;'> 
+		$mail->Body = "<table width='580' lass='deviceWidth' border='0' cellpadding='0' cellspacing='0' align='center' bgcolor='#ffffff' style='border-collapse: collapse; margin: 0 auto; font-family: Open Sans, sans-serif; font-weight:100; font-size:16px'> 
 						<tbody>
 							<tr>
 								<td valign='top' align='center' style='padding:0;' bgcolor='#ffffff'>
@@ -59,8 +59,9 @@
 								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px;'>
 									<p>Hi " . $fname . ", thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>
 									</p> 
-									<p> You now have access to the comprehensive test bank to help you with your studies. 
-										Our test banks are updated regularly by your beloved teachers. New questions are uploaded from time to time to help you prepare in your exams. </p>
+									<p> You now have access to the comprehensive test bank to help you with your studies. </p>
+									<p>	Our test banks are updated regularly by your beloved teachers. </p>
+									<p> New questions are uploaded from time to time to help you prepare in your exams. </p>
 									<p>	To complete your account sign-up, please click on the button below to confirm your email: </p> 
 									<p> 
 										<a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . "' 
@@ -82,8 +83,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px;'>
-									<p> Note: If you didn't sign up with <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>, there is no further action required from your end.</p></div>;
+								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px; font-size:12px;'>
+									<p> Note: If you didn't sign up with <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles</a>, there is no further action required from your end.</p>
 								</td>
 							</tr>
 						</tbody>
