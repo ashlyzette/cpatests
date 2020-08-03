@@ -57,13 +57,13 @@
 							</tr>
 							<tr>
 								<td width='100%' valign='top' bgcolor='#ffffff' style='padding-top:20px;'>
-									<p>Thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>
+									<p>Hi" . $fname . ", thank you for registering to <a href = 'http://cpareview.amigoha.com/'> USC Student Chronicles </a>
 									</p> 
 									<p> You now have access to the comprehensive test bank to help you with your studies. 
 										Our test banks are updated regularly by your beloved teachers. New questions are uploaded from time to time to help you prepare in your exams. </p>
 									<p>	To complete your account sign-up, please click on the button below to confirm your email: </p> 
 									<p> 
-										<a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . " 
+										<a href = '" . 'http://cpareview.amigoha.com/verification.php?token=' . $token . "' 
 										style='padding:10px;width:300px;
 										display:block;
 										text-decoration:none;
