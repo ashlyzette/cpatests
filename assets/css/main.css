@@ -68,3 +68,13 @@ a {
 .userForm {
 	margin-bottom: 0;
 }
+
+#pass_strength {
+	width: 0%;
+}
+
+.required_field {
+	color: red;
+	font-size: 0.8rem;
+	font-style: italic;
+}
