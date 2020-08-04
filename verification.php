@@ -17,8 +17,9 @@
             $msg = 'failed';
         }
     }
-    if (isset ($_POST['submit'])){
+    if (isset($_POST['submit'])){
         $email = $_POST['email'];
+        echo $email;
         $query = mysli_query($con, "SELECT email, token FROM users WHERE email ='$email'");
         $row = mysqli_num_rows($query);
         if ($row >0) {
@@ -102,7 +103,7 @@
     <?php 
         include_once ("includes/standard/menu.php");
         if ($msg == 'success'){
-            echo "<div class='container verification_message'>
+            echo "<div class='container verification_message mt-3'>
                     <h3> Authentication successful </h3>
                     <p> You may now login and have full access to our test banks.</p>
                     <p> Your subsciption will end after the end of the semester. </p>
@@ -114,7 +115,7 @@
                     <p> Your email verification failed, please make sure you have the correct link from your email.</p>
                     <form method = 'POST'>
                         <input type = 'text' name ='email' placeholder = 'enter registered email' required/>
-                        <input type ='submit' class = 'btn btn-primary btn-sm' name ='submit' vallue = 'Send Email Verification'/>
+                        <input type ='submit' class = 'btn btn-primary btn-sm' name ='submit' value = 'Send Email Verification'/>
                     </form>
                 </div>";
         }
