@@ -43,6 +43,9 @@
             }
             if (in_array("Email address not found, please try again!", $error_array)){
 				echo "Email address not found, please try again!";
+			}
+			if (in_array("Please verify your email address to gain access to test banks", $error_array)){
+				echo "Please verify your email address to gain access to test banks";
             }
 		?>
 	</div>
