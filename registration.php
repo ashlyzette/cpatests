@@ -174,7 +174,6 @@
 						</table>";
 			
 			$mail->send();
-			echo ("A verifaction code was sent to your email. Please check your email including your junk mail to verify your email address.");
 			//Clear session variables
 			$_SESSION['reg_fname']="";
 			$_SESSION['reg_lname'] = "";
@@ -189,6 +188,14 @@
 			$_SESSION['reg_year']= '';
 			$_SESSION['reg_teacher']= '';
 			$_SESSION['reg_code']= '';
+			?>
+			<script src = 'assets/js/jquery-3.5.1.min.js'> </script> 
+			<script type='text/javascript'> 
+					$(document).ready(function(){ 
+						$('#verification_modal').modal('show');
+					});
+				</script>
+			<?php
 		}
 	}
 ?>

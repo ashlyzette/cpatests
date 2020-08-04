@@ -8,7 +8,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
     <link rel='stylesheet' href = 'assets/css/bootstrap.min.css'></link>
 	<link rel='stylesheet' href = 'assets/css/registration.css'></link>
 	<link rel='stylesheet' href = 'assets/css/main.css'></link>
@@ -192,6 +193,26 @@
 								echo "Succefully registered. Please verify your email before you can log-in<br/>";
 							}
 						?>
+					</div>
+					<!-- Show modal form after registration -->
+					<div class="modal fade" id="verification_modal" tabindex="-1" role="dialog" aria-labelledby="verifyModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="verifyModalLabel">Thank you for registering</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								An email was sent to your registered email for your verification.
+								Please check junk email in case email is not found in your inbox.
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
