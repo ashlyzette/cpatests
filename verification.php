@@ -20,11 +20,9 @@
     if (isset($_POST['submit'])){
         $email = $_POST['email'];
         $query = mysqli_query($con, "SELECT email,token FROM users WHERE email ='$email'");
-        $row = mysqli_num_rows($query);
-        if ($row >0) {
+        if ($row = mysqli_fetch_array($query)) {
             $err = '';
             $token = $row['token'];
-            echo $token;
             $mail = new PHPMailer;
             //Send Email Verification to user
 			$mail->isSMTP();                                     	// Set mailer to use SMTP
