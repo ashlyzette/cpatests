@@ -9,6 +9,7 @@
 
     if (isset($_GET['token'])){
         $token = $_GET['token'];
+        echo $token;
         $verify_obj =mysqli_query($con,"SELECT token, verified, date_verified FROM users WHERE token = '$token'");
         if($verify = mysqli_fetch_array($verify)){
             mysqli_query($con,"UPDATE users SET verified ='yes' WHERE token = '$token'");
