@@ -24,6 +24,7 @@
         if ($row >0) {
             $err = '';
             $token = $row['token'];
+            echo $token;
             $mail = new PHPMailer;
             //Send Email Verification to user
 			$mail->isSMTP();                                     	// Set mailer to use SMTP
@@ -120,6 +121,8 @@
         }
         if ($err == 'Email Failed'){
                 echo "<div id ='err_email'> Email not found, please make sure you entered the registered email address </div>";
+        } else {
+            echo "<div id ='err_email'> Email verification sent to your registered email address. </div>";
         }
     ?>
     <script src = 'assets/js/jquery-3.5.1.min.js'> </script> 
