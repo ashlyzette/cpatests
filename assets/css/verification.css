@@ -1,0 +1,6 @@
+.verification_message {
+	text-align: center;
+}
+#err_email {
+	color: red;
+}
