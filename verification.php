@@ -7,11 +7,13 @@
     require 'includes/phpMailer/src/SMTP.php';
     include_once 'config/config.php';
 
+    $err = '';
     if (isset($_GET['token'])){
         $token = $_GET['token'];
         $verify_obj =mysqli_query($con,"SELECT token, verified, date_verified FROM users WHERE token = '$token'");
         if($verify = mysqli_fetch_array($verify_obj)){
-            mysqli_query($con,"UPDATE users SET verified ='yes' WHERE token = '$token'");
+            $date_verified = Date('Y-m-d H:m:s');
+            mysqli_query($con,"UPDATE users SET verified ='yes', date_verified='$date_verified' WHERE token = '$token'");
             $msg = 'success';
         } else {
             $msg = 'failed';
