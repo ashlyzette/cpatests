@@ -23,7 +23,7 @@
         $email = $_POST['email'];
         $query = mysqli_query($con, "SELECT email,token FROM users WHERE email ='$email'");
         if ($row = mysqli_fetch_array($query)) {
-            $err = '';
+            $err = 'verified';
             $token = $row['token'];
             $mail = new PHPMailer;
             //Send Email Verification to user
@@ -121,7 +121,7 @@
         }
         if ($err == 'Email Failed'){
                 echo "<div id ='err_email'> Email not found, please make sure you entered the registered email address </div>";
-        } else {
+        } else if ($err = 'verified') {
             echo "<div id ='err_email'> Email verification sent to your registered email address. </div>";
         }
     ?>
