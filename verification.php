@@ -19,8 +19,7 @@
     }
     if (isset($_POST['submit'])){
         $email = $_POST['email'];
-        echo $email;
-        $query = mysli_query($con, "SELECT email, token FROM users WHERE email ='$email'");
+        $query = mysqli_query($con, "SELECT email,token FROM users WHERE email ='$email'");
         $row = mysqli_num_rows($query);
         if ($row >0) {
             $err = '';
