@@ -1,5 +1,5 @@
 <?php
-    ob_start();
+	ob_start();
     require 'config/config.php';
     require 'registration.php';
     require 'includes/handlers/Login.php';

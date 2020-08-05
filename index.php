@@ -1,5 +1,6 @@
 <?php
     require 'config/config.php';
+    require 'registration.php';
     require 'includes/handlers/Login.php';
 ?>
 <!DOCTYPE html

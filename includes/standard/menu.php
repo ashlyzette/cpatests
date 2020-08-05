@@ -31,33 +31,31 @@
           </li>
       </ul>
     <div class = "px-3 py-3 need-validation">
-        <form class = "form-inline userForm" method="POST">
-            <div id = "userHeader"> 
-                <?php 
-                      if (isset($_SESSION['user']) && ($_SESSION['user'] != null) ) echo $_SESSION['user']; 
-                ?> 
-                <a class = 'ml-2' href = '#'><i class="fas fa-user-cog"></i></a>
-                <a href = 'includes/standard/logout.php'><i class="fas fa-sign-out-alt"></i></a>
-            </div>
-            <div id = "loginForm">
-                <div class="form-row ml-auto">
-                    <div class = "col-sm-5">
-                      <input class = "form-control form-control-sm" type="email" name="email" placeholder="Email" value="<?php if (isset($_SESSION['email'])){
-                        echo $_SESSION['email'];
-                        } ?>" required>
-                    </div>
-                    <div class ="col-sm-5">
-                        <input class = "form-control form-control-sm" type="password" name="password" placeholder="Password" required>
-                    </div>
-                    <div class ="col-sm-2">
-                        <input class = "form-control form-control-sm" type="submit" name = "login">
-                    </div>
-                </div>
-            </div>
-        </form>
+        <?php
+            if (isset($_SESSION['user']) && ($_SESSION['user'] != null) ) {
+                echo "<div id = 'userHeader'> " . $_SESSION['user'] . "
+                        <a class = 'ml-2' href = '#'><i class='fas fa-user-cog'></i></a>
+                        <a href = 'includes/standard/logout.php'><i class='fas fa-sign-out-alt'></i></a>
+                    </div>";
+            } else {
+                echo "<form class = 'form-inline userForm' method='POST'>
+                    <div id = 'loginForm'>
+                        <div class='form-row ml-auto'>
+                            <div class = 'col-sm-5'>
+                                <input class = 'form-control form-control-sm' type='email' name='email' placeholder='Email' required>
+                            </div>
+                            <div class ='col-sm-5'>
+                                <input class = 'form-control form-control-sm' type='password' name='password' placeholder='Password' required>
+                            </div>
+                            <div class ='col-sm-2'>
+                                <input class = 'form-control form-control-sm' type='submit' name = 'login'>
+                            </div>
+                        </div>
+                    </div></form>";
+            }
+        ?>
     </div>
   </div>
   <!-- Fontawesome kit Dependencies  -->
-	<script type="text/javascript" src="https://kit.fontawesome.com/0a18e92247.js"></script>
-  <script src = 'assets/js/menu.js'></script>
+<script type="text/javascript" src="https://kit.fontawesome.com/0a18e92247.js"></script>
 </nav>
