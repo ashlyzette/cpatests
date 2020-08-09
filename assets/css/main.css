@@ -78,3 +78,15 @@ a {
 	font-size: 0.8rem;
 	font-style: italic;
 }
+
+#err_message{
+	color:red;
+	font-style: italic;
+	font-size: 0.8em;
+	margin-right:20px;
+}
+
+.forgot_pass{
+	font-size: 0.8em;
+	color:white;
+}

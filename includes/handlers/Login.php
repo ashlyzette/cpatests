@@ -1,4 +1,5 @@
 <?php
+    $err_message='';
     if(isset($_POST['login'])){
         //Sanitize email then save email session
         $email = filter_var($_POST['email'],FILTER_SANITIZE_EMAIL);
@@ -12,13 +13,13 @@
                     header("Location: index.php");
                     exit();
                 } else {
-                    array_push($error_array, "Please verify your email address to gain access to test banks");
+                    $err_message = "Please verify your email address to gain access to test banks";
                 }
             } else  {
-                array_push($error_array, "Incorrect email and password, please try again!");
+                $err_message =  "Incorrect email and password, please try again!";
             }
         } else {
-            array_push($error_array, "Email address not found, please try again!");
+            $err_message =  "Email address not found, please try again!";
         }
     }
 ?>

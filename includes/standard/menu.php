@@ -51,7 +51,8 @@
                                 <input class = 'form-control form-control-sm' type='submit' name = 'login'>
                             </div>
                         </div>
-                    </div></form>";
+                    </div>
+                    </form>";
             }
         ?>
     </div>
@@ -59,3 +60,4 @@
   <!-- Fontawesome kit Dependencies  -->
 <script type="text/javascript" src="https://kit.fontawesome.com/0a18e92247.js"></script>
 </nav>
+<div class="d-flex justify-content-end"> <span id ='err_message'><?php echo $err_message; ?></span> </div>

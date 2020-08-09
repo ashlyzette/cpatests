@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Load menu -->
-    <?php include_once ("includes/standard/menu.php") ?>
+    <?php require ("includes/standard/menu.php") ?>
     <div class="container">
         <div class = "row mt-3">
             <div class="d-none d-sm-block col-md-3 col-sm-4 py-md-2 px-3 left_menu">
