@@ -19,7 +19,8 @@
             //Check if answer is correct
             $look_up = mysqli_query($this->con, "SELECT * FROM exam_bank WHERE id='$question' AND ans='$user_answer'");
             mysqli_num_rows($look_up) > 0 ? $isCorrect = 'yes' : $isCorrect = 'no';
-            $answer_obj = mysqli_query($this->con, "UPDATE exam SET answer = '$answer', is_correct = '$isCorrect' WHERE num ='$num' AND exam_id='$exam_id'");
+            $date_now = Date('Y-m-d H:i:s');
+            $answer_obj = mysqli_query($this->con, "UPDATE exam SET date_finished = '$date_now', answer = '$answer', is_correct = '$isCorrect' WHERE num ='$num' AND exam_id='$exam_id'");
         }
 
         public function GetQuestion($num,$exam_id){
@@ -133,7 +134,10 @@
 
             //Update status to 1
             $date_now = Date('Y-m-d H:i:s');
-            $status = mysqli_query($this->con, "UPDATE exam SET date_finished = '$date_now', done = '1' WHERE exam_id ='$exam_id'");
+            $status = mysqli_query($this->con, "UPDATE exam SET done = '1' WHERE exam_id ='$exam_id'");
+
+            //Update exam_summary
+            mysqli_query($this->con, "Update exam_summary set correct = '$correct', wrong ='$wrong', date_finish='$date_now', status ='1' WHERE exam_id = '$exam_id'");
             return "correct=". $correct . "&wrong=". $wrong;
         }
     }

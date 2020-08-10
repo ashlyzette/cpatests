@@ -5,6 +5,9 @@
  background: #F26B38;
  background: #F7DB4F;
  background: #2F9599; */
+body {
+	font-size: 0.9em;
+}
 
 a {
 	text-decoration: none;
@@ -79,14 +82,19 @@ a {
 	font-style: italic;
 }
 
-#err_message{
-	color:red;
+#err_message {
+	color: red;
 	font-style: italic;
 	font-size: 0.8em;
-	margin-right:20px;
+	margin-right: 20px;
 }
 
-.forgot_pass{
+.forgot_pass {
 	font-size: 0.8em;
-	color:white;
+	color: white;
+}
+
+#loginForm {
+	color: white;
+	/* text-decoration: none; */
 }

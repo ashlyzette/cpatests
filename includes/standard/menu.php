@@ -38,21 +38,9 @@
                         <a href = 'includes/standard/logout.php'><i class='fas fa-sign-out-alt'></i></a>
                     </div>";
             } else {
-                echo "<form class = 'form-inline userForm' method='POST'>
-                    <div id = 'loginForm'>
-                        <div class='form-row ml-auto'>
-                            <div class = 'col-sm-5'>
-                                <input class = 'form-control form-control-sm' type='email' name='email' placeholder='Email' required>
-                            </div>
-                            <div class ='col-sm-5'>
-                                <input class = 'form-control form-control-sm' type='password' name='password' placeholder='Password' required>
-                            </div>
-                            <div class ='col-sm-2'>
-                                <input class = 'form-control form-control-sm' type='submit' name = 'login'>
-                            </div>
-                        </div>
-                    </div>
-                    </form>";
+                echo "<div>
+                        <a id = 'loginForm' href='login.php'> Sign In or Register Here </a>
+                    </div>";
             }
         ?>
     </div>
